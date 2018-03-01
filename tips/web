@@ -3,4 +3,4 @@
     2nd -   _.forEach(list, function(value, key){})
     3rd -   _(list).forEach(function (value, key){}
 and more...
-2.  _.isEqual() , compare array whether equal . clock: 28/02/2018
+2.  _.isEqual() , compare array whether equal . clock: 2018/02/28
