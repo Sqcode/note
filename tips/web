@@ -30,3 +30,5 @@ Vue's 'v-if' is more useful than you ever use it in normal way , you can't belie
 下方是一个组件，通过show显示该组件，并初始化了组件中的内容
 there is the component , it shows by the attibute 'show' , and init this value
 <sh-nvg-cascade-search v-if="tempWrap.show" :data="nvg" @change="handleNvgChange"></sh-nvg-cascade-search>
+
+. clock: 2018/03/31
