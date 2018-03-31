@@ -1,2 +1,2 @@
 # note
-note from internet
+note from internet / new skills
