@@ -1,11 +1,24 @@
-1. cycle methods
-    1st -   for (var i in list) {}
-    2nd -   _.forEach(list, function(value, key){})
-    3rd -   _(list).forEach(function (value, key){}
-and more...
-2.  compare array whether equal . clock: 2018/02/28
-_.isEqual()
+6. 去重
+	var arr = [1,1,2,3,4,5,5]
+	var f = function(array){return [...new Set(array)]}
+	
+	1. arr
+	(7) [1, 1, 2, 3, 4, 5, 5]
+	2. f(arr)
+	(5) [1, 2, 3, 4, 5]
 
+5. 深拷贝(deep copy/clone)：
+	var obj = {"name": "sqcode", "age": 18}
+	var { ...obj2 } = obj
+	
+4. Vue中的v-if,可以达到重新加载data/mount定义的变量、方法的效果。为什么要重载?组件包含组件,需要初始化回显对应值,例如dialog包含另一个组件
+Vue's 'v-if' is more useful than you ever use it in normal way , you can't believed that ， it can be reload a component to init this value
+
+下方是一个组件，通过show显示该组件，并初始化了组件中的内容
+there is the component , it shows by the attibute 'show' , and init this value
+<sh-nvg-cascade-search v-if="tempWrap.show" :data="nvg" @change="handleNvgChange"></sh-nvg-cascade-search>
+
+. clock: 2018/03/31
 3. Vue的级联组件不能设置值0插入，它不能加载这个子节点，即使有子节点
 Vue's cascade component can't set value 0 insert, it can't to be load this children , even though has the children
 <code>
@@ -23,12 +36,10 @@ Vue's cascade component can't set value 0 insert, it can't to be load this child
         }
     }
 </code>
-
-4. Vue中的v-if,可以达到重新加载data/mount定义的变量、方法的效果。为什么要重载?组件包含组件,需要初始化回显对应值,例如dialog包含另一个组件
-Vue's 'v-if' is more useful than you ever use it in normal way , you can't believed that ， it can be reload a component to init this value
-
-下方是一个组件，通过show显示该组件，并初始化了组件中的内容
-there is the component , it shows by the attibute 'show' , and init this value
-<sh-nvg-cascade-search v-if="tempWrap.show" :data="nvg" @change="handleNvgChange"></sh-nvg-cascade-search>
-
-. clock: 2018/03/31
+2.  compare array whether equal . clock: 2018/02/28
+_.isEqual()
+1. cycle methods
+    1st -   for (var i in list) {}
+    2nd -   _.forEach(list, function(value, key){})
+    3rd -   _(list).forEach(function (value, key){}
+and more...
