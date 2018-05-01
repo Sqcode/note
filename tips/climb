@@ -1,0 +1,8 @@
+1. org.jsoup
+2. junit
+
+String url = "xxx";
+
+Document doc = Jsoup.connect (url).get ();
+
+Elements links = doc.select ("a.card-list");
