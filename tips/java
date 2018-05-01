@@ -1,4 +1,37 @@
+2. 
+    <resultMap id="orderMap" type="com.model.recharge.RechargeOrderModel" >
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="product_id" property="productId" jdbcType="INTEGER" />
+	</resultMap>
+    <resultMap type="com.model.recharge.RechargeOrderModel" id="groupMap" extends="orderMap">
+		<id column="product_id" property="id"/> <!-- 关联 -->
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="image" property="image" jdbcType="VARCHAR" />
+	</resultMap>
+    <select id="selectByList" resultMap="groupMap" parameterType="java.util.Map">
+		SELECT
+			a.id AS id,
+            a.product_id AS productId,
+			product.name AS name,
+			product.image AS image
+		FROM 
+			recharge_order a,
+			recharge_product product
+		WHERE
+			a.product_id = product.id and a.is_valid = 1
+			<if test="id != null">
+				and a.id = #{id}
+			</if>
+			<if test="order != null">
+				${order}
+			</if>
+			<if test="pageBegin != null and pageSize != null" >
+				LIMIT 
+					#{pageBegin}, #{pageSize}
+			</if>
+	</select>
+    clock: 2018/05/01
 1.  desk..path
     File file = FileSystemView.getFileSystemView().getHomeDirectory();
-2.
-clock: 2018/03/01
+    clock: 2018/03/01
+
