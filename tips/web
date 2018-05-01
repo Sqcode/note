@@ -6,11 +6,14 @@
 	(7) [1, 1, 2, 3, 4, 5, 5]
 	2. f(arr)
 	(5) [1, 2, 3, 4, 5]
-
+. clock: 2018/05/01
 5. 深拷贝(deep copy/clone)：
 	var obj = {"name": "sqcode", "age": 18}
 	var { ...obj2 } = obj
 	
+	var arr = [1,2,3]
+	var [ ...arr2 ] = arr
+. clock: 2018/05/01
 4. Vue中的v-if,可以达到重新加载data/mount定义的变量、方法的效果。为什么要重载?组件包含组件,需要初始化回显对应值,例如dialog包含另一个组件
 Vue's 'v-if' is more useful than you ever use it in normal way , you can't believed that ， it can be reload a component to init this value
 
